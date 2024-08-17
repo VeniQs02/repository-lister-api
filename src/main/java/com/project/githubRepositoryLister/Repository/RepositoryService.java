@@ -7,11 +7,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.IOException;
 import java.net.HttpURLConnection;
-import java.net.URI;
 import java.net.URISyntaxException;
+import java.net.URI;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -88,7 +88,7 @@ public class RepositoryService {
         }
     }
 
-    private static BufferedReader getBufferedReader(String userUrl) throws URISyntaxException, IOException {
+    public BufferedReader getBufferedReader(String userUrl) throws URISyntaxException, IOException {
         URL url = new URI(userUrl).toURL();
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("GET");
