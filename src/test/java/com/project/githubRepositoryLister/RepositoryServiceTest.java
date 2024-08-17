@@ -27,9 +27,7 @@ public class RepositoryServiceTest {
                 .when(serviceMock)
                 .getBufferedReader(url);
 
-        ResponseStatusException exception = assertThrows(ResponseStatusException.class, () -> {
-            serviceMock.getRepositories(userLogin);
-        });
+        ResponseStatusException exception = assertThrows(ResponseStatusException.class, () -> serviceMock.getRepositories(userLogin));
 
         assertEquals(HttpStatus.NOT_FOUND, exception.getStatusCode());
         assertEquals("User not found", exception.getReason());
@@ -45,9 +43,7 @@ public class RepositoryServiceTest {
                 .when(serviceMock)
                 .getBufferedReader(url);
 
-        ResponseStatusException exception = assertThrows(ResponseStatusException.class, () -> {
-            serviceMock.getRepositories(userLogin);
-        });
+        ResponseStatusException exception = assertThrows(ResponseStatusException.class, () -> serviceMock.getRepositories(userLogin));
 
         assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, exception.getStatusCode());
         assertEquals("Error connecting to GitHub API", exception.getReason());
