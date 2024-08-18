@@ -1,3 +1,10 @@
+#screen{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
 #headingNSearchbar{
   display: flex;
   justify-content: center;
@@ -5,32 +12,44 @@
   flex-direction: column;
 }
 
+h1{
+  font-size: 40px;
+}
+
 #searchbar{
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
+  margin-left: 65px;
 }
 
-#searchbarIcon{
+#searchbarIcon {
   padding: 10px;
   border-radius: 50%;
   color: white;
   font-size: 34px;
+  transition: background-color 0.2s, box-shadow 0.2s;
 }
 
 #searchbarIcon:hover{
   background-color: #6a6a6a;
+  box-shadow: #6a6a6a 0 0 10px;
 }
 
 input{
   height: 15px;
-  padding: 10px;
+  padding: 15px;
   width: 300px;
-  border-radius: 10px;
+  border-radius: 15px;
   border: 1px black solid;
+  font-size: 25px;
+  background-color: #DDDDDD;
+  transition: background-color 0.4s;
+
 }
 
 input:focus{
   outline: none;
+  background-color: #FFFFFF;
 }
