@@ -1,29 +1,24 @@
 <div id="screen">
   <div id="headingNSearchbar">
-    <img alt="RepositoryLister Logo" ngSrc="./assets/repositoryLister.png" fill>
+    <img id="logo" alt="RepositoryLister Logo" ngSrc="./assets/repositoryLister.png" height="415" width="415" priority>
     <h1>RepositoryLister</h1>
     <div id="searchbar">
-      <input >
-      <a href="#">
+      <input type="text" [(ngModel)]="username">
+      <button (click)="buttonClick()">
         <span class="material-symbols-sharp" id="searchbarIcon">search</span>
-      </a>
+      </button>
+    </div>
+  </div>
+  <div id="repositoryList">
+    <div *ngFor="let repository of repositories">
+      <div id="repository">
+        <h2>{{ repository.repositoryName }}</h2>
+        <p>User: {{ repository.userLogin }}</p>
+        <div *ngFor="let branch of repository.branches">
+          <p>Branch: {{ branch.branchName }}</p>
+          <p>Commit SHA: {{ branch.commitSHA }}</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-
-
-
-<!--
-TODO:
-
-1. searching for users should work
-2. footer implementation
-3. styling
-4. add a spinner for loading
-5. maybe add a logo?
-6. pagination if there are more than X repositories
-
-
-TODO:
-spring security should be set and application.properties file secured
--->

@@ -11,6 +11,10 @@
   align-items: center;
   flex-direction: column;
 }
+img{
+  height: 200px;
+  width: 200px;
+}
 
 h1{
   font-size: 40px;
@@ -24,6 +28,11 @@ h1{
   margin-left: 65px;
 }
 
+button{
+  background: none;
+  border: none;
+}
+
 #searchbarIcon {
   padding: 10px;
   border-radius: 50%;
@@ -35,6 +44,7 @@ h1{
 #searchbarIcon:hover{
   background-color: #6a6a6a;
   box-shadow: #6a6a6a 0 0 10px;
+  cursor: pointer;
 }
 
 input{
