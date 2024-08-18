@@ -1,17 +1,21 @@
-<div id="screen">
-  <div id="headingNSearchbar">
-    <img id="logo" alt="RepositoryLister Logo" ngSrc="./assets/repositoryLister.png" height="415" width="415" priority>
-    <h1>RepositoryLister</h1>
-    <div id="searchbar">
-      <input type="text" [(ngModel)]="username">
+<div class="display">
+  <div class="titleSearchbarLogo">
+    <img class="logo" alt="RepositoryLister Logo" ngSrc="./assets/repositoryLister.png" height="415" width="415" priority>
+    <h1 class="title">RepositoryLister</h1>
+    <div class="searchbar">
+      <input type="text" [(ngModel)]="username" (keyup.enter)="buttonClick()">
       <button (click)="buttonClick()">
-        <span class="material-symbols-sharp" id="searchbarIcon">search</span>
+        <span class="material-symbols-sharp searchbarIcon">search</span>
       </button>
     </div>
   </div>
-  <div id="repositoryList">
+  <div *ngIf="isDataFetched" class="repositoryList">
+<!--    throbber is not a typo, its a functioning word for the circular loading animation
+        more on that here - https://en.wikipedia.org/wiki/Throbber     -->
+    <div *ngIf="isLoading" class="throbber"></div>
+    <div *ngIf="errorMessage" class="error">{{errorMessage}}</div>
     <div *ngFor="let repository of repositories">
-      <div id="repository">
+      <div class="repository">
         <h2>{{ repository.repositoryName }}</h2>
         <p>User: {{ repository.userLogin }}</p>
         <div *ngFor="let branch of repository.branches">

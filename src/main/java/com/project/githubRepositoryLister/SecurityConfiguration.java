@@ -42,7 +42,7 @@ public class SecurityConfiguration {
                 .authorizeRequests(authorizeRequests -> authorizeRequests.anyRequest().authenticated())
                 .httpBasic(withDefaults())
                 .formLogin(withDefaults())
-                .csrf().disable() // Disables the csrf protection - should be improved
+                .csrf().disable() //disables the csrf protection - should be improved
                 .build();
     }
 
