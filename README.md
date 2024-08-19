@@ -26,6 +26,9 @@ All the tests are being passed
 ## Usage/Examples
 
 This project is developed like a full stack app, although its endpoint can be used on its own. More on that in the API Reference section.
+
+The app delivers a responsive design with user-friendly animations and overall good readability and usability
+
 It performs well on both larger and smaller screens. Here is the comparison of a smaller desktop monitor, to a Iphone 14 Pro Max you can select in Google Chrome DevTools.
 
 1366x768:
@@ -42,16 +45,12 @@ Error message:
 
 If the user has no public repositories it doesn't display anything.
 
-The app delivers a responsive design with user-friendly animations and overall good readability and usability
-
-
-
 ## API Reference
 
 #### Get user
 
 ```http
-  GET /api/repository/githubUsername
+  GET /api/repository/{githubUsername}
 ```
 
 | Parameter | Type     | Description                |
@@ -81,8 +80,8 @@ If the GitHub API reaches its limits, or the user was not found, or something el
 
 ```json
 {
-    “status”: "responseCode"
-    “message”: "errorMessage"
+    “status”: {responseCode}
+    “message”: {errorMessage}
 }
 ```
 
