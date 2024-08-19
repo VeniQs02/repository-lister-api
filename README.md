@@ -49,7 +49,7 @@ If the user has no public repositories it doesn't display anything.
 
 #### Get user
 
-```http
+```
   GET /api/repository/{githubUsername}
 ```
 
@@ -71,21 +71,21 @@ It returns all user's public repositories along with their branches that are not
               }
           ]
       }
-... (and more)
+... (and more, if they exist)
 ]
 ```
 
 If the GitHub API reaches its limits, or the user was not found, or something else went wrong it will return an object in this format:
 
 
-```json
+```
 {
-    “status”: {responseCode}
-    “message”: {errorMessage}
+    "status": responseCode,
+    "message": errorMessage
 }
 ```
 
-If the user has no public repositories it returns []. 
+If the user has no public repositories it returns [ ]. 
 
 ## Acknowledgements
 
