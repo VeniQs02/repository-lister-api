@@ -40,6 +40,7 @@ Error message:
 
 ![image](https://github.com/user-attachments/assets/e15c4c24-be4e-4763-8081-6c5927bd3d47)
 
+If the user has no public repositories it doesn't display anything.
 
 The app delivers a responsive design with user-friendly animations and overall good readability and usability
 
@@ -84,6 +85,9 @@ If the GitHub API reaches its limits, or the user was not found, or something el
     “message”: "errorMessage"
 }
 ```
+
+If the user has no public repositories it returns []. 
+
 ## Acknowledgements
 
  - [Used icons and fonts](https://fonts.google.com/)
