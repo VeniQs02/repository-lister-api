@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class RepositoryService {
-  private baseUrl = 'http://localhost:8080/repository';
+  private baseUrl = 'http://localhost:8080/api/repository';
   private username = '123'; //replace with actual username
   private password = '123'; //replace with actual password
 

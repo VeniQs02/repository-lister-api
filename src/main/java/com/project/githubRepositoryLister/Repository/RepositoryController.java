@@ -15,9 +15,8 @@ public class RepositoryController {
         this.repositoryService = repositoryService;
     }
 
-    @GetMapping("/repository/{userLogin}")
-    public List<Repository> getRepositories(@PathVariable String userLogin,
-                                            @RequestHeader(value = "Accept", defaultValue = "application/json") String acceptHeader) {
+    @GetMapping("/api/repository/{userLogin}")
+    public List<Repository> getRepositories(@PathVariable String userLogin) {
         return repositoryService.getRepositories(userLogin);
     }
 }

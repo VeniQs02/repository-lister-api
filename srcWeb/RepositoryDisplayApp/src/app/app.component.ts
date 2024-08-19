@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import {NgForOf, NgIf, NgOptimizedImage} from "@angular/common";
+import { NgForOf, NgIf, NgOptimizedImage } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 import { RepositoryService } from "../services/repository.service";
+import { FooterComponent } from "../components/footer/footer.component";
 
 interface Branch {
   branchName: string;
@@ -18,7 +19,7 @@ interface Repository {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgOptimizedImage, FormsModule, NgForOf, NgIf],
+  imports: [RouterOutlet, NgOptimizedImage, FormsModule, NgForOf, NgIf, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -35,12 +36,7 @@ export class AppComponent {
   buttonClick() {
     this.isLoading = true;
     this.errorMessage = "";
-    if (!this.username) {
-      this.errorMessage = "Please enter a username.";
-      return;
 
-    //   someting doesnt work here TODO
-    }
     this.repositoryService.getRepositories(this.username).subscribe(
       (data) => {
         this.repositories = data;
